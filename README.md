@@ -1,2 +1,5 @@
 # ACEBOT
-Discord bot for SWEAce community server
+
+
+# Server
+https://discord.gg/ZhVbQE9Tp2
