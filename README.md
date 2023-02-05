@@ -6,7 +6,7 @@
 - Open config.json and change all the values to fit your client/server
 
 # Default Configurations
-### Variables are stored in ```config.json``` 
+### Client variables are stored in ```config.json``` & Color variables are stored in ```utils/colors.json```
 - `token`: Your discord client's token, can be found in the discord developer portal
 - `prefix`: Goes before every command, it can be almost anything, but choose something easy
 - `presence`: Changes your client's status (ex. https://i.imgur.com/yDFrNIH.png)
@@ -23,6 +23,10 @@
 - Go to `config.json`
 - Add your API key to the "api_key" field
 - Add your **Forum**'s URL to the "url" field and add `?api` at the end of your URL (ex. https://i.imgur.com/Luo3deZ.png)
+- `CTRL + Shift + S` in an editor and replace all "example.com" links
 
+# Command Requests
+- I will make any command so long as it's reasonable for free, just open a issue and I'll get you an ETA on when it will be added
+- 
 # Server
 https://discord.gg/ZhVbQE9Tp2
