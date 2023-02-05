@@ -27,6 +27,6 @@
 
 # Command Requests
 - I will make any command so long as it's reasonable for free, just open a issue and I'll get you an ETA on when it will be added
-- 
+
 # Server
 https://discord.gg/ZhVbQE9Tp2
