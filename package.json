@@ -1,0 +1,19 @@
+{
+  "name": "acebot",
+  "version": "1.0.0",
+  "description": "Discord Bot for SWEACE community CSGO servers",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "counterfeited",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^14.6.0",
+    "fs": "^0.0.1-security",
+    "ms": "^2.1.3",
+    "node-fetch": "^2.6.7",
+    "util": "^0.12.5"
+  }
+}
