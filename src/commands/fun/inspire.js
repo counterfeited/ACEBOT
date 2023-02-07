@@ -7,7 +7,6 @@ module.exports = {
     description: "Inspires everyone.",
     aliases: [""],
     usage: "inspire",
-    ownerOnly: true,
     run: async(client, message, args, util) => {
         try {
             fetch('https://inspirobot.me/api?generate=true')
