@@ -4,7 +4,7 @@ module.exports = async(client, role) => {
 
 
     try {
-        const joined_embed = new EmbedBuilder()
+        const embed = new EmbedBuilder()
         .setTitle(`Role Created`)
         .addFields(
             { name: "Role Name", value: `${role.name}`, inline: true },
@@ -15,7 +15,7 @@ module.exports = async(client, role) => {
         .setTimestamp()
         .setColor(role.hexColor)
 
-        await client.channels.cache.get(client.config.logchannel).send({ embeds: [joined_embed] })
+        await client.channels.cache.get(client.config.logchannel).send({ embeds: [embed] })
     } catch(e) {
         console.log(e)
     }

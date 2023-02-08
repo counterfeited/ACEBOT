@@ -15,7 +15,7 @@ module.exports = {
         if(to_mute.user.bot === true) {
             return util.quickEmbed(client, message, "You cannot mute a bot", client.colors.red)
         } 
-        if (to_mute = message.author) {
+        if(to_mute.id === message.author.id) {
             return util.quickEmbed(client, message, "You cannot mute yourself", client.colors.red)
         }
         if(!to_mute) {

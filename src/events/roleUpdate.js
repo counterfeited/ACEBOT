@@ -3,7 +3,7 @@ const { EmbedBuilder } = require('discord.js');
 module.exports = async(client, newRole, oldRole) => {
     
     try {
-        const joined_embed = new EmbedBuilder()
+        const embed = new EmbedBuilder()
         .setTitle(`Role Updated`)
         .addFields(
             { name: "Edited Role Name", value: `${oldRole.name}`, inline: true },
@@ -15,7 +15,7 @@ module.exports = async(client, newRole, oldRole) => {
         .setTimestamp()
         .setColor(oldRole.hexColor)
 
-        await client.channels.cache.get(client.config.logchannel).send({ embeds: [joined_embed] })
+        await client.channels.cache.get(client.config.logchannel).send({ embeds: [embed] })
     } catch(e) {
         console.log(e)
     }

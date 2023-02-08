@@ -4,14 +4,13 @@ module.exports = async(client, message) => {
     if(message.author.bot === true) {
         return;
     }
-
     try {
-        const joined_embed = new EmbedBuilder()
+        const embed = new EmbedBuilder()
         .setTitle(`${message.author.tag}'s message was deleted`)
-        .setDescription(`**Message Content**\n${message.content}`)
+        .setDescription(message.content)
         .setTimestamp()
         .setColor(client.colors.accent)
-        await client.channels.cache.get(client.config.logchannel).send({ embeds: [joined_embed] })
+        await client.channels.cache.get(client.config.logchannel).send({ embeds: [embed] })
     } catch(e) {
         console.log(e)
     }

@@ -1,16 +1,18 @@
 const { EmbedBuilder } = require('discord.js');
 
-module.exports = async(client, newMessage, oldMessage) => {
-    
+module.exports = async(client, oldMessage, newMessage) => {
     try {
-        const joined_embed = new EmbedBuilder()
-        .setTitle(`Message Updated`)
-        .setDescription(`**Old Message**\n\`${newMessage.content}\`\n\n**New Message**\n\`${oldMessage.content}\``)
+        const embed = new EmbedBuilder()
+        .setAuthor({name: `Message edited by ${oldMessage.author.tag}`})
+        .addFields(
+            { name: "Old Message Content", value: `${oldMessage.content}`, inline: true},
+            { name: "New Message Content", value: `${newMessage.content}`, inline: true}
+        )
         .setTimestamp()
         .setColor(client.colors.accent)
 
-        await client.channels.cache.get(client.config.logchannel).send({ embeds: [joined_embed] })
+        await client.channels.cache.get(client.config.logchannel).send({ embeds: [embed] })
     } catch(e) {
-        console.log(e)
+        return;
     }
 }

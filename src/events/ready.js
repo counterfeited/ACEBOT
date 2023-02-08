@@ -16,12 +16,12 @@ module.exports = async(client) => {
     await client.user.setPresence({ activities: [{ name: client.config.presence }] });
 
     try {
-        const joined_embed = new EmbedBuilder()
+        const embed = new EmbedBuilder()
         .setTitle("ACEBOT is now online.")
         .setColor(client.colors.accent)
         .setTimestamp()
         .setFooter({ text: `Report any issues to tyrant#1897`, iconURL: client.user.displayAvatarURL()})
-        await client.channels.cache.get(client.config.logchannel).send({ embeds: [joined_embed] })
+        await client.channels.cache.get(client.config.logchannel).send({ embeds: [embed] })
     } catch(e) {
         console.log(e)
     }

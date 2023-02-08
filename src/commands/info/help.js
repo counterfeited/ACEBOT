@@ -26,17 +26,17 @@ module.exports = {
             const category = categories.filter(c => c === args[0].toLowerCase()).join("");
             if(category) {
                 const commands = client.commands.filter(c => c.category.toLowerCase() === category.toLowerCase()).map(cmd => `\`${cmd.name}\``).join(", ")
-                const cmdsEmbed = new EmbedBuilder()
+                const cmds_embed = new EmbedBuilder()
                 .setTitle(`${category.slice(0, 1).toUpperCase()}${category.slice(1)} Commands`)
                 .setDescription(commands)
                 .setColor(client.colors.accent)
 
                 return message.reply({
-                    embeds: [cmdsEmbed],
+                    embeds: [cmds_embed],
                 })
             } else if(client.commands.has(args[0].toLowerCase())) {
                 const cmd = client.commands.get(args[0].toLowerCase())
-                const cmdEmbed = new EmbedBuilder()
+                const cmd_embed = new EmbedBuilder()
                 .setTitle(`${cmd.name.slice(0, 1).toUpperCase()}${cmd.name.slice(1).toLowerCase()}`)
                 .addFields(
                     { name: "Command Information", value: `Name: \`${cmd.name || "-"}\`\nAliases: \`${cmd.aliases.join(", ") || "-"}\`\nDescription: \`${cmd.description || "-"}\`\nCategory: \`${cmd.category || "-"}\`` },
@@ -46,7 +46,7 @@ module.exports = {
                 .setFooter({ text: "Usage Syntax: <> required, [] optional, | or", iconURL: client.user.displayAvatarURL() })
 
                 return message.reply({
-                    embeds: [cmdEmbed],
+                    embeds: [cmd_embed],
                 })
             } else {
                 return util.quickEmbed(client, message, `I couldn't find any information for \`${args[0].toLowerCase()}\``, client.colors.red)
